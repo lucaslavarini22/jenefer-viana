@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cormorant: 'Cormorant Garamond', 'Playfair Display', serif;
+    --font-playfair: 'Playfair Display', serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+    --color-onix: #0E0C0C;
+    --color-grafite: #211D1C;
+    --color-champagne: #C19A55;
+    --color-ouro-antigo: #9B7138;
+    --color-fume: #6D625B;
+    --color-marfim: #F2EADF;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0E0C0C;
+    color: #F2EADF;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-luxury {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  }
+}
+
+/* Custom Luxury Brand Aesthetics (Edição 01 · 2026) */
+.font-cormorant {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Champagne & Satin Gold Text Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F2EADF 0%, #C19A55 60%, #9B7138 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-subtle {
+  background: linear-gradient(135deg, #F2EADF 0%, #C19A55 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-champagne-subtle {
+  border-color: rgba(193, 154, 85, 0.25);
+}
+
+.bg-grafite-glass {
+  background: rgba(33, 29, 28, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glow-champagne {
+  box-shadow: 0 4px 25px rgba(193, 154, 85, 0.18);
+}
+
+.glow-card:hover {
+  box-shadow: 0 10px 30px -10px rgba(193, 154, 85, 0.15);
+  border-color: rgba(193, 154, 85, 0.45);
+}
+
+.dark-gradient-overlay {
+  background: linear-gradient(to top, #0E0C0C 10%, rgba(14, 12, 12, 0.85) 60%, rgba(14, 12, 12, 0) 100%);
+}
+
+/* Custom scrollbar in brand colors */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0E0C0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #211D1C;
+  border-radius: 3px;
+  border: 1px solid #6D625B;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C19A55;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+

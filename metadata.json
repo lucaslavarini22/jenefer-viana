@@ -1,0 +1,6 @@
+{
+  "name": "Jenefer Viana Studio",
+  "description": "Estética corporal de alto padrão, protocolos exclusivos e mentoria profissional por Jenefer Viana.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
