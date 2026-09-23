@@ -15,6 +15,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection = 'inicio' }) => {
     { href: '#objetivo', id: 'objetivo', label: 'OBJETIVO' },
     { href: '#ecossistema', id: 'ecossistema', label: 'ECOSSISTEMA' },
     { href: '#inspiracoes', id: 'inspiracoes', label: 'INSPIRAÇÕES' },
+    { href: '#midia', id: 'midia', label: 'EVIDÊNCIA' },
     { href: '#contato', id: 'contato', label: 'CONTATO' },
   ];
 

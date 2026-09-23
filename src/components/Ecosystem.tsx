@@ -19,6 +19,7 @@ export interface NucleusItem {
   description: string;
   image: string;
   alt: string;
+  objectPosition?: string;
   procedures: ProcedureItem[];
   relatedObjectiveId?: string;
 }
@@ -30,8 +31,8 @@ export const ECOSYSTEM_DATA: NucleusItem[] = [
     index: 0,
     title: 'SLIM & CONTORNO',
     shortTitle: 'SLIM & CONTORNO',
-    description: 'Protocolos personalizados para diferentes objetivos corporais.',
-    image: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1200&auto=format&fit=crop',
+    description: 'Protocolos personalizados para gordura localizada, contorno corporal e redução de medidas.',
+    image: '/assets/eco-01-slim.jpg',
     alt: 'Contorno corporal e silhueta harmoniosa',
     relatedObjectiveId: 'contornos',
     procedures: [
@@ -39,25 +40,31 @@ export const ECOSYSTEM_DATA: NucleusItem[] = [
         id: 'slim-detox',
         number: '01',
         name: 'SLIM DETOX',
-        description: 'Protocolo corporal voltado à sensação de leveza e ao cuidado com o contorno.',
+        description: 'Promove a desintoxicação corporal, auxilia na eliminação de toxinas e reduz o inchaço e a retenção de líquidos.',
       },
       {
-        id: 'slim-power',
+        id: 'slim-shape',
         number: '02',
-        name: 'SLIM POWER',
-        description: 'Cuidado corporal intensivo desenvolvido de acordo com o objetivo de cada pessoa.',
+        name: 'SLIM SHAPE',
+        description: 'Tratamento com aplicação de hidrolipoclasia diretamente na região de gordura localizada, auxiliando na quebra da gordura e na redução de medidas.',
       },
       {
         id: 'metodo-slim-4d',
         number: '03',
-        name: 'MÉTODO SLIM 4D',
-        description: 'Combinação personalizada de etapas para trabalhar diferentes dimensões do contorno corporal.',
+        name: 'SLIM MÉTODO 4D',
+        description: 'Tratamento para gordura localizada e celulite, atuando em regiões como abdômen e coxas para auxiliar na quebra de gordura e redução de medidas.',
       },
       {
-        id: 'slim-shape',
+        id: 'slim-power',
         number: '04',
-        name: 'SLIM SHAPE',
-        description: 'Protocolo direcionado à valorização da silhueta e à harmonia das formas.',
+        name: 'SLIM POWER',
+        description: 'Protocolo avançado e intensivo que atua de forma potencializada na gordura localizada, redução de medidas e retenção de líquidos.',
+      },
+      {
+        id: 'slim-contorno-proc',
+        number: '05',
+        name: 'SLIM CONTORNO',
+        description: 'Focado nas famosas dobrinhas e nos pneuzinhos, atua na gordura localizada e auxilia na redução do inchaço e da retenção de líquidos.',
       },
     ],
   },
@@ -68,27 +75,27 @@ export const ECOSYSTEM_DATA: NucleusItem[] = [
     title: 'GLÚTEOS & TONIFICAÇÃO',
     shortTitle: 'GLÚTEOS & TONIFICAÇÃO',
     description: 'Cuidados pensados para valorizar o contorno, a aparência e a firmeza dos glúteos.',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop',
+    image: '/assets/eco-02-gluteos.jpg',
     alt: 'Realce do contorno, aparência e firmeza dos glúteos',
     relatedObjectiveId: 'gluteos',
     procedures: [
       {
         id: 'remodelacao-pump',
         number: '01',
-        name: 'REMODELAÇÃO DO GLÚTEO / PUMP-UP',
-        description: 'Protocolo estético direcionado à valorização visual do contorno dos glúteos.',
+        name: 'REMODELAÇÃO DE GLÚTEO / PUMP-UP',
+        description: 'Protocolo para remodelar, empinar e valorizar os glúteos, trabalhando também a lateral para um contorno mais definido e harmonioso.',
       },
       {
         id: 'remodelacao-tonificacao',
         number: '02',
-        name: 'REMODELAÇÃO DO GLÚTEO + TONIFICAÇÃO MUSCULAR',
-        description: 'Combinação de cuidados estéticos e estímulos voltados à aparência e à tonificação.',
+        name: 'REMODELAÇÃO DE GLÚTEO + TONIFICAÇÃO MUSCULAR',
+        description: 'Tratamento que combina remodelação dos glúteos e tonificação muscular para valorizar o volume, a firmeza e o contorno da região.',
       },
       {
         id: 'bumbum-promax',
         number: '03',
-        name: 'BUMBUM PROMAX',
-        description: 'Protocolo exclusivo desenvolvido para trabalhar contorno, aparência e firmeza.',
+        name: 'BUMBUM PRO MAX',
+        description: 'Protocolo completo para glúteos, combinando tecnologias para tratar gordura localizada, celulite e bananinhas, além de estimular a tonificação muscular e melhorar o contorno corporal.',
       },
     ],
   },
@@ -98,8 +105,8 @@ export const ECOSYSTEM_DATA: NucleusItem[] = [
     index: 2,
     title: 'PELE & TECNOLOGIA',
     shortTitle: 'PELE & TECNOLOGIA',
-    description: 'Tecnologia e cuidado estético para diferentes necessidades da pele e do corpo.',
-    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1200&auto=format&fit=crop',
+    description: 'Tecnologia e cuidado estético avançado para diferentes necessidades da pele e do corpo.',
+    image: '/assets/eco-03-pele.jpg',
     alt: 'Tecnologia e tratamentos avançados para pele corporal',
     relatedObjectiveId: 'pele',
     procedures: [
@@ -107,26 +114,25 @@ export const ECOSYSTEM_DATA: NucleusItem[] = [
         id: 'tratamento-celulite',
         number: '01',
         name: 'TRATAMENTO PARA CELULITE',
-        description: 'Cuidado estético direcionado à aparência e às irregularidades da pele.',
+        description: 'Protocolo direcionado para uma região, combinando ozonioterapia, endermoterapia, Celutec e atuar na celulite e melhorar o contorno da pele.',
       },
       {
         id: 'tratamento-estrias',
         number: '02',
         name: 'TRATAMENTO PARA ESTRIAS',
-        description: 'Protocolo voltado ao cuidado com a textura e a aparência das estrias.',
-      },
-      {
-        id: 'tratamento-lipedema',
-        number: '03',
-        name: 'TRATAMENTO PARA LIPEDEMA',
-        description: 'Cuidado estético complementar voltado ao conforto e à aparência corporal.',
-        note: 'Não substitui avaliação ou acompanhamento médico.',
+        description: 'Protocolo desenvolvido para tratar estrias, combinando técnicas de renovação da pele, microdermoabrasão, dermoterapia, ácidos e séruns específicos.',
       },
       {
         id: 'depilacao-laser',
-        number: '04',
+        number: '03',
         name: 'DEPILAÇÃO A LASER',
-        description: 'Procedimento de redução progressiva dos pelos, realizado após avaliação individual.',
+        description: 'Tecnologia para redução progressiva dos pelos, proporcionando uma pele mais lisa, uniforme e livre da necessidade constante de depilação.',
+      },
+      {
+        id: 'clareamento-laser',
+        number: '04',
+        name: 'CLAREAMENTO A LASER',
+        description: 'Tratamento com laser que auxilia na renovação celular e no clareamento da pele, promovendo uma aparência mais uniforme e revitalizada.',
       },
     ],
   },
@@ -137,7 +143,7 @@ export const ECOSYSTEM_DATA: NucleusItem[] = [
     title: 'TERAPIAS & DRENAGEM',
     shortTitle: 'TERAPIAS & DRENAGEM',
     description: 'Experiências de cuidado voltadas ao conforto, à leveza e ao bem-estar corporal.',
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop',
+    image: '/assets/eco-04-terapias.png',
     alt: 'Terapias manuais, drenagens e relaxamento sensorial',
     relatedObjectiveId: 'corpo-leve',
     procedures: [
@@ -145,25 +151,25 @@ export const ECOSYSTEM_DATA: NucleusItem[] = [
         id: 'massagem-localizada',
         number: '01',
         name: 'MASSAGEM TERAPÊUTICA LOCALIZADA',
-        description: 'Cuidado direcionado a regiões específicas do corpo, de acordo com a necessidade apresentada.',
+        description: 'Massagem direcionada para regiões específicas, combinando pedras quentes, aparelho e técnicas terapêuticas para aliviar tensões, dores e desconfortos.',
       },
       {
         id: 'massagem-corpo-todo',
         number: '02',
-        name: 'MASSAGEM TERAPÊUTICA CORPO TODO',
-        description: 'Experiência corporal completa voltada ao relaxamento, ao conforto e ao bem-estar.',
+        name: 'MASSAGEM TERAPÊUTICA CORPORAL',
+        description: 'Massagem realizada em todo o corpo, combinando pedras quentes, aparelho e técnicas terapêuticas para aliviar tensões, dores e desconfortos, promovendo relaxamento e bem-estar.',
       },
       {
         id: 'drenagem-abdomen',
         number: '03',
-        name: 'DRENAGEM LINFÁTICA — ABDÔMEN',
-        description: 'Técnica manual direcionada à região abdominal e à sensação de leveza.',
+        name: 'DRENAGEM LINFÁTICA ABDOMINAL',
+        description: 'Drenagem realizada na região abdominal, indicada para auxiliar na redução do inchaço e da retenção de líquidos, promovendo uma sensação de leveza e bem-estar.',
       },
       {
         id: 'drenagem-corpo-todo',
         number: '04',
-        name: 'DRENAGEM LINFÁTICA — CORPO TODO',
-        description: 'Técnica manual realizada em diferentes regiões do corpo, de acordo com a avaliação.',
+        name: 'DRENAGEM LINFÁTICA CORPO TODO',
+        description: 'Drenagem realizada em todo o corpo para estimular o sistema linfático, auxiliar na redução do inchaço e da retenção de líquidos, proporcionando mais leveza e bem-estar.',
       },
     ],
   },
@@ -174,51 +180,52 @@ export const ECOSYSTEM_DATA: NucleusItem[] = [
     title: 'FACE & OLHAR',
     shortTitle: 'FACE & OLHAR',
     description: 'Cuidados personalizados para valorizar a pele, a expressão e o olhar.',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop',
+    image: '/assets/eco-05-face.jpg',
     alt: 'Cuidados faciais de precisão e valorização do olhar',
+    objectPosition: '45% 20%',
     relatedObjectiveId: 'rosto-olhar',
     procedures: [
       {
         id: 'argiloterapia',
         number: '01',
         name: 'ARGILOTERAPIA',
-        description: 'Aplicação de argilas selecionadas de acordo com as características e necessidades da pele.',
+        description: 'Tratamento personalizado de acordo com as necessidades da pele, auxiliando no controle da oleosidade, clareamento e melhora da aparência da pele.',
       },
       {
-        id: 'revitalizacao',
+        id: 'revitalizacao-facial',
         number: '02',
-        name: 'REVITALIZAÇÃO',
-        description: 'Cuidado facial voltado à aparência de frescor, luminosidade e vitalidade.',
+        name: 'REVITALIZAÇÃO FACIAL',
+        description: 'Protocolo de revitalização que combina limpeza, peeling ultrassônico, peeling de diamante e LEDterapia para renovar e devolver luminosidade à pele.',
       },
       {
-        id: 'clareamento-glow',
+        id: 'glow-facial',
         number: '03',
-        name: 'CLAREAMENTO GLOW',
-        description: 'Protocolo estético direcionado à uniformidade visual e à luminosidade da pele.',
+        name: 'GLOW FACIAL',
+        description: 'Protocolo facial que combina clareamento a laser e máscara de ouro para revitalizar a pele e auxiliar no tratamento de manchas, melasma, acne e poros.',
       },
       {
         id: 'tratamento-facial-premium',
         number: '04',
         name: 'TRATAMENTO FACIAL PREMIUM',
-        description: 'Sequência personalizada de cuidados faciais definida após avaliação.',
+        description: 'Limpeza de pele ultra profunda com tratamentos personalizados de acordo com as necessidades da pele, promovendo renovação, cuidado e revitalização.',
       },
       {
         id: 'limpeza-extracao',
         number: '05',
         name: 'LIMPEZA DE PELE COM EXTRAÇÃO',
-        description: 'Higienização profunda da pele com extração realizada de maneira cuidadosa.',
+        description: 'Limpeza de pele completa para renovação facial, com esfoliação, aparelho vibratório e radiofrequência, promovendo uma pele mais limpa e renovada.',
       },
       {
         id: 'design-personalizado',
         number: '06',
         name: 'DESIGN PERSONALIZADO',
-        description: 'Desenho das sobrancelhas pensado de acordo com as proporções e características do rosto.',
+        description: 'Design desenvolvido a partir do mapeamento facial, respeitando a estrutura natural do rosto para valorizar e harmonizar o olhar.',
       },
       {
         id: 'design-henna',
         number: '07',
         name: 'DESIGN COM HENNA',
-        description: 'Design com aplicação de henna para proporcionar preenchimento e definição temporária.',
+        description: 'Design personalizado com aplicação de henna, valorizando o formato das sobrancelhas e proporcionando um olhar mais definido e harmonioso.',
       },
     ],
   },
@@ -449,7 +456,8 @@ export const Ecosystem: React.FC<EcosystemProps> = ({ selectedObjective }) => {
             <img
               src={activeNucleus.image}
               alt={activeNucleus.alt}
-              className="absolute inset-0 w-full h-full object-cover object-[center_right] filter contrast-[1.08] brightness-[0.6] transition-all duration-700"
+              className="absolute inset-0 w-full h-full object-cover filter contrast-[1.08] brightness-[0.6] transition-all duration-700"
+              style={{ objectPosition: activeNucleus.objectPosition ?? 'center right' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0E0C0C] via-[#0E0C0C]/50 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0E0C0C]/80 via-transparent to-transparent" />
@@ -467,24 +475,36 @@ export const Ecosystem: React.FC<EcosystemProps> = ({ selectedObjective }) => {
         {/* ========================================================= */}
         <div className="flex md:hidden flex-col w-full space-y-6 my-auto py-2">
           
-          {/* Horizontal Nucleus Selector Pill Bar */}
-          <div className="w-full overflow-x-auto pb-2 scrollbar-none flex gap-3 snap-x">
+          {/* Floating Guidance Chip with generous spacing */}
+          <div className="w-full flex items-center justify-center pt-2 pb-4">
+            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#1C1715] border border-[#C19A55]/35 text-[#C19A55] text-[10px] font-montserrat tracking-[0.18em] uppercase font-medium shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C19A55] animate-pulse" />
+              Toque no núcleo para ver os procedimentos ✦
+            </div>
+          </div>
+
+          {/* Symmetrical & Elegant 2-Column Grid for the 5 Nuclei on Mobile */}
+          <div className="w-full grid grid-cols-2 gap-2.5 pb-3">
             {ECOSYSTEM_DATA.map((nucleus, idx) => {
               const isActive = activeNucleusIndex === idx;
+              const isLast = idx === ECOSYSTEM_DATA.length - 1;
+
               return (
                 <button
                   key={nucleus.id}
                   onClick={() => handleSelectNucleus(idx)}
-                  className={`snap-start shrink-0 px-4 py-2.5 border transition-all text-[11px] font-montserrat tracking-[0.2em] uppercase font-medium flex items-center gap-2 ${
+                  className={`min-h-[46px] px-2.5 py-2.5 rounded-xl border transition-all duration-300 font-montserrat text-[10px] xs:text-[10.5px] tracking-[0.1em] uppercase font-medium flex items-center justify-center text-center gap-1.5 cursor-pointer active:scale-95 ${
+                    isLast ? 'col-span-2 max-w-[260px] mx-auto w-full' : 'w-full'
+                  } ${
                     isActive
-                      ? 'border-[#C19A55] bg-[#C19A55]/10 text-[#F2EADF]'
-                      : 'border-[#211D1C] bg-transparent text-[#6D625B]'
+                      ? 'border-[#C19A55] bg-gradient-to-r from-[#C19A55] via-[#D4AD68] to-[#9B7138] text-[#0E0C0C] font-bold shadow-[0_4px_20px_rgba(193,154,85,0.45)]'
+                      : 'border-[#3D322C] bg-[#161211]/90 text-[#F2EADF]/75 hover:border-[#C19A55]/60 hover:text-[#F2EADF] shadow-sm'
                   }`}
                 >
-                  <span className={isActive ? 'text-[#C19A55]' : 'text-[#6D625B]'}>
-                    {nucleus.number}
+                  <span className={isActive ? 'text-[#0E0C0C] font-black' : 'text-[#C19A55] font-bold'}>
+                    {nucleus.number} •
                   </span>
-                  <span>{nucleus.shortTitle}</span>
+                  <span className="truncate">{nucleus.shortTitle}</span>
                 </button>
               );
             })}
@@ -495,7 +515,8 @@ export const Ecosystem: React.FC<EcosystemProps> = ({ selectedObjective }) => {
             <img
               src={activeNucleus.image}
               alt={activeNucleus.alt}
-              className="absolute inset-0 w-full h-full object-cover object-center filter contrast-[1.05] brightness-[0.6]"
+              className="absolute inset-0 w-full h-full object-cover filter contrast-[1.05] brightness-[0.6]"
+              style={{ objectPosition: activeNucleus.objectPosition ?? 'center' }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0E0C0C] via-[#0E0C0C]/70 to-transparent" />
 

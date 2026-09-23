@@ -20,7 +20,7 @@ export const OBJECTIVES_DATA: ObjectiveItem[] = [
     index: 0,
     title: 'REDESENHAR MEUS CONTORNOS',
     description: 'Valorizar minhas formas e conquistar uma aparência mais harmoniosa através de mapeamento e protocolos personalizados.',
-    image: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1200&auto=format&fit=crop',
+    image: '/assets/obj-01-contornos.jpg',
     alt: 'Contornos corporais harmoniosos com iluminação suave e textura bronze',
     category: 'corporal',
   },
@@ -30,7 +30,7 @@ export const OBJECTIVES_DATA: ObjectiveItem[] = [
     index: 1,
     title: 'REALÇAR MEUS GLÚTEOS',
     description: 'Valorizar o contorno, a firmeza e a aparência dos meus glúteos.',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop',
+    image: '/assets/obj-02-gluteos.jpg',
     alt: 'Realce de curvas e firmeza corporal com estética elegante',
     category: 'gluteos',
   },
@@ -40,7 +40,7 @@ export const OBJECTIVES_DATA: ObjectiveItem[] = [
     index: 2,
     title: 'CUIDAR DA MINHA PELE',
     description: 'Dar mais atenção à textura, à aparência e ao cuidado com a minha pele.',
-    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1200&auto=format&fit=crop',
+    image: '/assets/obj-03-pele.jpg',
     alt: 'Textura acetinada e cuidados com a pele em atmosfera intimista',
     category: 'pele',
   },
@@ -50,7 +50,7 @@ export const OBJECTIVES_DATA: ObjectiveItem[] = [
     index: 3,
     title: 'RENOVAR MEU ROSTO E MEU OLHAR',
     description: 'Cuidar da pele facial e valorizar minha expressão de forma personalizada.',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop',
+    image: '/assets/obj-04-rosto.jpg',
     alt: 'Renovação e cuidado facial com iluminação quente',
     category: 'facial',
   },
@@ -60,7 +60,7 @@ export const OBJECTIVES_DATA: ObjectiveItem[] = [
     index: 4,
     title: 'SENTIR MEU CORPO MAIS LEVE',
     description: 'Transformar o cuidado corporal em um momento de leveza e bem-estar.',
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop',
+    image: '/assets/obj-05-leveza.png',
     alt: 'Momento de bem-estar corporal, drenagem e leveza sensorial',
     category: 'bem-estar',
   },
@@ -369,8 +369,47 @@ export const Objective: React.FC<ObjectiveProps> = ({ onSelectObjective }) => {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="flex md:hidden flex-col w-full my-auto py-2"
+          className="flex md:hidden flex-col w-full my-auto py-2 space-y-4"
         >
+          {/* Floating Guidance Chip */}
+          <div className="w-full flex items-center justify-center pt-2 pb-4">
+            <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#1C1715] border border-[#C19A55]/35 text-[#C19A55] text-[10px] font-montserrat tracking-[0.18em] uppercase font-medium shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C19A55] animate-pulse" />
+              Toque no objetivo para ver detalhes ✦
+            </div>
+          </div>
+
+          {/* Symmetrical 2-Column Grid for the 6 Objectives */}
+          <div className="w-full grid grid-cols-2 gap-2.5 pb-3">
+            {OBJECTIVES_DATA.map((obj, idx) => {
+              const isActive = currentIndex === idx;
+              const shortTitles = [
+                'CONTORNOS',
+                'GLÚTEOS',
+                'PELE',
+                'ROSTO & OLHAR',
+                'CORPO LEVE',
+                'BEM-ESTAR'
+              ];
+              return (
+                <button
+                  key={obj.id}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`min-h-[44px] px-2.5 py-2.5 rounded-xl border transition-all duration-300 font-montserrat text-[10px] tracking-[0.1em] uppercase font-medium flex items-center justify-center text-center gap-1.5 cursor-pointer active:scale-95 w-full ${
+                    isActive
+                      ? 'border-[#C19A55] bg-gradient-to-r from-[#C19A55] via-[#D4AD68] to-[#9B7138] text-[#0E0C0C] font-bold shadow-[0_4px_18px_rgba(193,154,85,0.4)]'
+                      : 'border-[#3D322C] bg-[#161211]/90 text-[#F2EADF]/75 hover:border-[#C19A55]/60 hover:text-[#F2EADF] shadow-sm'
+                  }`}
+                >
+                  <span className={isActive ? 'text-[#0E0C0C] font-black' : 'text-[#C19A55] font-bold'}>
+                    0{idx + 1} •
+                  </span>
+                  <span className="truncate">{shortTitles[idx] || obj.title}</span>
+                </button>
+              );
+            })}
+          </div>
+
           {/* Main Card Mobile */}
           <div className="relative w-full h-[460px] xs:h-[500px] border border-[#C19A55]/40 bg-[#14100F] overflow-hidden flex flex-col justify-between p-6 xs:p-7 shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
             

@@ -5,6 +5,7 @@ import { About } from './components/About';
 import { Objective, ObjectiveItem } from './components/Objective';
 import { Ecosystem } from './components/Ecosystem';
 import { Inspiration } from './components/Inspiration';
+import { Evidence } from './components/Evidence';
 import { Contact } from './components/Contact';
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
   useEffect(() => {
     const handleScroll = () => {
       const contactEl = document.getElementById('contato');
+      const midiaEl = document.getElementById('midia');
       const inspiracoesEl = document.getElementById('inspiracoes');
       const ecosystemEl = document.getElementById('ecossistema');
       const objectiveEl = document.getElementById('objetivo');
@@ -23,6 +25,8 @@ export default function App() {
 
       if (contactEl && contactEl.getBoundingClientRect().top <= scrollPos) {
         setActiveSection('contato');
+      } else if (midiaEl && midiaEl.getBoundingClientRect().top <= scrollPos) {
+        setActiveSection('midia');
       } else if (inspiracoesEl && inspiracoesEl.getBoundingClientRect().top <= scrollPos) {
         setActiveSection('inspiracoes');
       } else if (ecosystemEl && ecosystemEl.getBoundingClientRect().top <= scrollPos) {
@@ -66,7 +70,10 @@ export default function App() {
         {/* Seção 05 — Inspirações */}
         <Inspiration />
 
-        {/* Seção 06 — Contato */}
+        {/* Seção 06 — Jenefer em Evidência */}
+        <Evidence />
+
+        {/* Seção — Contato */}
         <Contact />
       </main>
     </div>

@@ -108,14 +108,16 @@ export const Hero: React.FC<HeroProps> = () => {
               onMouseLeave={() => setIsHoveringDesktop(false)}
               className="relative z-10 w-full max-w-[420px] lg:max-w-[480px] flex items-end justify-center select-none cursor-crosshair group"
             >
-              {/* 1. Base Layer: Moody Contrast Silhouette */}
+              {/* 1. Base Layer: Moody Contrast Silhouette with seamless soft vignette mask */}
               <img
                 src={photoUrl}
                 alt="Jenefer Viana — Especialista em Estética Corporal"
-                className="w-full h-auto max-h-[580px] lg:max-h-[640px] object-cover object-bottom filter contrast-[1.1] brightness-[0.4] grayscale-[30%] transition-all duration-300"
+                className="w-full h-auto max-h-[580px] lg:max-h-[640px] object-cover object-bottom filter contrast-[1.15] brightness-[0.45] grayscale-[25%] transition-all duration-300"
                 style={{
-                  maskImage: 'linear-gradient(to top, transparent 0%, black 22%, black 100%)',
-                  WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 22%, black 100%)',
+                  maskImage: 'radial-gradient(ellipse 72% 70% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%), linear-gradient(to top, transparent 0%, black 20%, black 100%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 72% 70% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%), linear-gradient(to top, transparent 0%, black 20%, black 100%)',
+                  maskComposite: 'intersect',
+                  WebkitMaskComposite: 'destination-in',
                 }}
               />
 
@@ -125,11 +127,11 @@ export const Hero: React.FC<HeroProps> = () => {
                 style={{
                   opacity: isHoveringDesktop ? 1 : 0.45,
                   maskImage: isHoveringDesktop
-                    ? `radial-gradient(circle 170px at ${torchPosDesktop.x}% ${torchPosDesktop.y}%, black 25%, rgba(0,0,0,0.55) 60%, transparent 100%), linear-gradient(to top, transparent 0%, black 22%, black 100%)`
-                    : `radial-gradient(circle 130px at 50% 32%, black 20%, rgba(0,0,0,0.4) 55%, transparent 100%), linear-gradient(to top, transparent 0%, black 22%, black 100%)`,
+                    ? `radial-gradient(circle 170px at ${torchPosDesktop.x}% ${torchPosDesktop.y}%, black 25%, rgba(0,0,0,0.55) 60%, transparent 100%), radial-gradient(ellipse 72% 70% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%)`
+                    : `radial-gradient(circle 130px at 50% 32%, black 20%, rgba(0,0,0,0.4) 55%, transparent 100%), radial-gradient(ellipse 72% 70% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%)`,
                   WebkitMaskImage: isHoveringDesktop
-                    ? `radial-gradient(circle 170px at ${torchPosDesktop.x}% ${torchPosDesktop.y}%, black 25%, rgba(0,0,0,0.55) 60%, transparent 100%), linear-gradient(to top, transparent 0%, black 22%, black 100%)`
-                    : `radial-gradient(circle 130px at 50% 32%, black 20%, rgba(0,0,0,0.4) 55%, transparent 100%), linear-gradient(to top, transparent 0%, black 22%, black 100%)`,
+                    ? `radial-gradient(circle 170px at ${torchPosDesktop.x}% ${torchPosDesktop.y}%, black 25%, rgba(0,0,0,0.55) 60%, transparent 100%), radial-gradient(ellipse 72% 70% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%)`
+                    : `radial-gradient(circle 130px at 50% 32%, black 20%, rgba(0,0,0,0.4) 55%, transparent 100%), radial-gradient(ellipse 72% 70% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%)`,
                   maskComposite: 'intersect',
                   WebkitMaskComposite: 'destination-in',
                 }}
@@ -199,7 +201,7 @@ export const Hero: React.FC<HeroProps> = () => {
           </div>
 
           {/* Lower Section: Portrait with Golden Halo Arc behind + Touch Flashlight */}
-          <div className="relative mt-6 mb-2 flex items-center justify-center min-h-[320px] xs:min-h-[380px]">
+          <div className="relative mt-6 mb-2 flex items-center justify-center min-h-[340px] xs:min-h-[400px]">
             
             {/* Luminous Golden Ring behind in mobile */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] xs:w-[320px] xs:h-[320px] rounded-full pointer-events-none">
@@ -218,14 +220,16 @@ export const Hero: React.FC<HeroProps> = () => {
               onTouchEnd={() => setIsHoveringMobile(false)}
               className="relative z-10 w-full max-w-[320px] xs:max-w-[360px] flex items-end justify-center select-none touch-none"
             >
-              {/* 1. Base Dark Silhouette */}
+              {/* 1. Base Dark Silhouette with soft vignette edge fading */}
               <img
                 src={photoUrl}
                 alt="Jenefer Viana — Especialista em Estética Corporal"
-                className="w-full h-auto max-h-[420px] object-cover object-bottom filter contrast-[1.1] brightness-[0.4] grayscale-[30%]"
+                className="w-full h-auto max-h-[420px] object-cover object-bottom filter contrast-[1.15] brightness-[0.45] grayscale-[25%]"
                 style={{
-                  maskImage: 'linear-gradient(to top, transparent 0%, black 20%, black 100%)',
-                  WebkitMaskImage: 'linear-gradient(to top, transparent 0%, black 20%, black 100%)',
+                  maskImage: 'radial-gradient(ellipse 72% 68% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%), linear-gradient(to top, transparent 0%, black 20%, black 100%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 72% 68% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%), linear-gradient(to top, transparent 0%, black 20%, black 100%)',
+                  maskComposite: 'intersect',
+                  WebkitMaskComposite: 'destination-in',
                 }}
               />
 
@@ -235,11 +239,11 @@ export const Hero: React.FC<HeroProps> = () => {
                 style={{
                   opacity: isHoveringMobile ? 1 : 0.6,
                   maskImage: isHoveringMobile
-                    ? `radial-gradient(circle 130px at ${torchPosMobile.x}% ${torchPosMobile.y}%, black 25%, rgba(0,0,0,0.5) 60%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%, black 100%)`
-                    : `radial-gradient(circle 110px at 50% 32%, black 20%, rgba(0,0,0,0.4) 55%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%, black 100%)`,
+                    ? `radial-gradient(circle 130px at ${torchPosMobile.x}% ${torchPosMobile.y}%, black 25%, rgba(0,0,0,0.5) 60%, transparent 100%), radial-gradient(ellipse 72% 68% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%)`
+                    : `radial-gradient(circle 110px at 50% 32%, black 20%, rgba(0,0,0,0.4) 55%, transparent 100%), radial-gradient(ellipse 72% 68% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%)`,
                   WebkitMaskImage: isHoveringMobile
-                    ? `radial-gradient(circle 130px at ${torchPosMobile.x}% ${torchPosMobile.y}%, black 25%, rgba(0,0,0,0.5) 60%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%, black 100%)`
-                    : `radial-gradient(circle 110px at 50% 32%, black 20%, rgba(0,0,0,0.4) 55%, transparent 100%), linear-gradient(to top, transparent 0%, black 20%, black 100%)`,
+                    ? `radial-gradient(circle 130px at ${torchPosMobile.x}% ${torchPosMobile.y}%, black 25%, rgba(0,0,0,0.5) 60%, transparent 100%), radial-gradient(ellipse 72% 68% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%)`
+                    : `radial-gradient(circle 110px at 50% 32%, black 20%, rgba(0,0,0,0.4) 55%, transparent 100%), radial-gradient(ellipse 72% 68% at 50% 45%, black 35%, rgba(0,0,0,0.6) 65%, transparent 95%)`,
                   maskComposite: 'intersect',
                   WebkitMaskComposite: 'destination-in',
                 }}

@@ -49,7 +49,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
     // Open WhatsApp after short feedback
     setTimeout(() => {
-      window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+      window.open(`https://wa.me/5531973277217?text=${message}`, '_blank');
     }, 800);
   };
 

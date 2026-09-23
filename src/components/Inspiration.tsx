@@ -10,6 +10,7 @@ export interface InspirationItem {
   category: string;
   image?: string;
   alt: string;
+  objectPosition?: string;
   sourceUrl?: string;
 }
 
@@ -18,37 +19,41 @@ export const INSPIRATIONS_DATA: InspirationItem[] = [
     id: 'ref-01',
     number: '01',
     displayNumber: '01',
-    name: 'FOTO DA REFERÊNCIA',
-    category: 'NOME • CUIDADO • INSPIRAÇÃO',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Referência estética 01 de beleza, cuidado e transformação',
+    name: 'PAOLLA OLIVEIRA',
+    category: 'BELEZA • CONTORNO • PRESENÇA',
+    image: '/assets/insp-01.png',
+    alt: 'Paolla Oliveira - Inspiração de beleza, contorno e presença',
+    objectPosition: 'center 25%',
   },
   {
     id: 'ref-02',
     number: '02',
     displayNumber: '02',
-    name: 'FOTO DA REFERÊNCIA',
-    category: 'BELEZA • CUIDADO • INSPIRAÇÃO',
-    image: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Referência estética 02 de beleza, cuidado e presença',
+    name: 'SABRINA SATO',
+    category: 'TONIFICAÇÃO • RECUPERAÇÃO • CONTORNO',
+    image: '/assets/insp-02.png',
+    alt: 'Sabrina Sato - Inspiração de vitalidade, contorno e recuperação corporal',
+    objectPosition: 'center 40%',
   },
   {
     id: 'ref-03',
     number: '03',
     displayNumber: '03',
-    name: 'FOTO DA REFERÊNCIA',
-    category: 'AUTOCUIDADO • TRANSFORMAÇÃO • INSPIRAÇÃO',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Referência estética 03 de autocuidado e bem-estar',
+    name: 'CAROLINA DIECKMANN',
+    category: 'AUTOCUIDADO • NATURALIDADE • GLOW',
+    image: '/assets/insp-03.jpg',
+    alt: 'Carolina Dieckmann - Inspiração de autocuidado e naturalidade',
+    objectPosition: 'center 25%',
   },
   {
     id: 'ref-04',
     number: '04',
     displayNumber: '04',
-    name: 'FOTO DA REFERÊNCIA',
-    category: 'HARMONIA • CUIDADO • INSPIRAÇÃO',
-    image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Referência estética 04 de harmonia e cuidado pessoal',
+    name: 'JADE PICON',
+    category: 'EXPRESSÃO • OLHAR • GLOW',
+    image: '/assets/insp-04.jpg',
+    alt: 'Jade Picon - Inspiração de olhar, design e presença marcante',
+    objectPosition: 'center 20%',
   },
 ];
 
@@ -231,23 +236,33 @@ export const Inspiration: React.FC = () => {
             {/* PREVIOUS CARD (PARTIAL VIEW LEFT) */}
             <div
               onClick={goToPrev}
-              className="absolute left-0 w-[180px] lg:w-[220px] h-[360px] lg:h-[400px] border border-[#C19A55]/15 bg-[#14100F]/90 overflow-hidden opacity-25 hover:opacity-40 transition-all duration-500 cursor-pointer -translate-x-6 lg:-translate-x-4 pointer-events-auto flex flex-col justify-between p-5 select-none"
+              className="absolute left-0 w-[180px] lg:w-[220px] h-[360px] lg:h-[400px] border border-[#C19A55]/20 bg-[#14100F] overflow-hidden opacity-30 hover:opacity-50 transition-all duration-500 cursor-pointer -translate-x-6 lg:-translate-x-4 pointer-events-auto flex flex-col justify-between p-5 select-none relative"
             >
-              <div className="flex items-center justify-between">
-                <span className="font-montserrat text-[9px] tracking-[0.25em] text-[#6D625B] uppercase font-medium">
+              {prevRef.image && (
+                <img
+                  src={prevRef.image}
+                  alt={prevRef.alt}
+                  className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 brightness-40"
+                  style={{ objectPosition: prevRef.objectPosition ?? 'center' }}
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0E0C0C] via-[#0E0C0C]/70 to-transparent" />
+
+              <div className="relative z-10 flex items-center justify-between">
+                <span className="font-montserrat text-[9px] tracking-[0.25em] text-[#C19A55] uppercase font-medium">
                   ANTERIOR
                 </span>
               </div>
 
-              {/* Large Bronze Watermark Number */}
-              <div className="my-auto text-center">
-                <span className="font-cormorant text-7xl lg:text-8xl text-[#9B7138]/40 font-normal leading-none">
+              {/* Number watermark */}
+              <div className="relative z-10 my-auto text-center">
+                <span className="font-cormorant text-6xl lg:text-7xl text-[#C19A55]/30 font-normal leading-none">
                   {prevRef.number}
                 </span>
               </div>
 
-              <div>
-                <span className="font-montserrat text-[8.5px] tracking-[0.2em] text-[#6D625B] uppercase block">
+              <div className="relative z-10">
+                <span className="font-montserrat text-[9px] tracking-[0.2em] text-[#F2EADF]/70 uppercase block font-medium">
                   {prevRef.name}
                 </span>
               </div>
@@ -267,41 +282,38 @@ export const Inspiration: React.FC = () => {
 
             {/* ACTIVE MAIN CARD (CENTER) */}
             <div
-              className="relative z-20 w-[300px] sm:w-[340px] lg:w-[380px] h-[460px] lg:h-[500px] border border-[#C19A55] bg-[#14100F] shadow-[0_12px_45px_rgba(0,0,0,0.85),0_0_35px_rgba(193,154,85,0.18)] overflow-hidden transition-all duration-500 flex flex-col justify-between p-6 lg:p-8"
+              className="relative z-20 w-[320px] sm:w-[360px] lg:w-[400px] h-[480px] lg:h-[520px] border border-[#C19A55] bg-[#14100F] shadow-[0_12px_45px_rgba(0,0,0,0.85),0_0_35px_rgba(193,154,85,0.22)] overflow-hidden transition-all duration-500 flex flex-col justify-between p-6 lg:p-8"
               style={{
                 transform: isDragging ? `translateX(${dragOffset * 0.35}px)` : 'translateX(0)',
               }}
             >
-              {/* Background ambient luxury architectural fluting & dark silk texture */}
-              <div className="absolute inset-0 w-full h-full pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#181311] via-[#100C0B] to-[#0A0808]" />
-                {/* Subtle vertical architectural fluting texture */}
-                <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#C19A55_1px,transparent_1px)] [background-size:16px_16px]" />
-                {/* Soft draped dark lighting */}
-                <div className="absolute top-0 right-0 w-48 h-full bg-gradient-to-l from-[#9B7138]/15 to-transparent" />
-                <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-[#0E0C0C] to-transparent" />
-              </div>
+              {/* Persona Image Background */}
+              {currentRef.image && (
+                <img
+                  src={currentRef.image}
+                  alt={currentRef.alt}
+                  className="absolute inset-0 w-full h-full object-cover filter contrast-[1.08] brightness-[0.75] transition-all duration-700"
+                  style={{ objectPosition: currentRef.objectPosition ?? 'center' }}
+                />
+              )}
+
+              {/* Rich Cinematic Gradient Overlays for optimal text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0E0C0C] via-[#0E0C0C]/50 to-transparent h-[70%] top-auto pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0E0C0C]/80 via-transparent to-transparent h-[35%] pointer-events-none" />
 
               {/* Top Reference Tag */}
               <div className="relative z-10 flex items-center justify-between">
-                <span className="font-montserrat text-[10.5px] tracking-[0.3em] text-[#C19A55] uppercase font-medium">
+                <span className="font-montserrat text-[10.5px] tracking-[0.3em] text-[#C19A55] uppercase font-medium bg-[#0E0C0C]/60 px-2.5 py-1 border border-[#C19A55]/30">
                   REFERÊNCIA {currentRef.number}
                 </span>
               </div>
 
-              {/* Center Iconic Luxury Number Display */}
-              <div className="relative z-10 my-auto flex items-center justify-center">
-                <span className="font-cormorant text-[100px] sm:text-[120px] lg:text-[135px] text-[#9B7138] font-normal leading-none tracking-tight select-none drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
-                  {currentRef.number}
-                </span>
-              </div>
-
               {/* Bottom Caption & Category Block */}
-              <div className="relative z-10 pt-4 border-t border-[#C19A55]/30">
-                <h4 className="font-montserrat text-xs tracking-[0.25em] text-[#F2EADF] uppercase font-medium">
+              <div className="relative z-10 pt-4 border-t border-[#C19A55]/40 bg-[#0E0C0C]/40 -mx-6 -mb-6 lg:-mx-8 lg:-mb-8 p-6 lg:p-8 backdrop-blur-xs">
+                <h4 className="font-cormorant text-2xl lg:text-3xl text-[#F2EADF] uppercase font-normal tracking-wide leading-tight">
                   {currentRef.name}
                 </h4>
-                <span className="font-montserrat text-[9px] tracking-[0.2em] text-[#6D625B] uppercase block mt-1">
+                <span className="font-montserrat text-[9.5px] tracking-[0.22em] text-[#C19A55] uppercase block mt-1 font-medium">
                   {currentRef.category}
                 </span>
               </div>
@@ -322,23 +334,33 @@ export const Inspiration: React.FC = () => {
             {/* NEXT CARD (PARTIAL VIEW RIGHT) */}
             <div
               onClick={goToNext}
-              className="absolute right-0 w-[180px] lg:w-[220px] h-[360px] lg:h-[400px] border border-[#C19A55]/15 bg-[#14100F]/90 overflow-hidden opacity-25 hover:opacity-40 transition-all duration-500 cursor-pointer translate-x-6 lg:translate-x-4 pointer-events-auto flex flex-col justify-between p-5 select-none"
+              className="absolute right-0 w-[180px] lg:w-[220px] h-[360px] lg:h-[400px] border border-[#C19A55]/20 bg-[#14100F] overflow-hidden opacity-30 hover:opacity-50 transition-all duration-500 cursor-pointer translate-x-6 lg:translate-x-4 pointer-events-auto flex flex-col justify-between p-5 select-none relative"
             >
-              <div className="flex items-center justify-end">
-                <span className="font-montserrat text-[9px] tracking-[0.25em] text-[#6D625B] uppercase font-medium">
+              {nextRef.image && (
+                <img
+                  src={nextRef.image}
+                  alt={nextRef.alt}
+                  className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 brightness-40"
+                  style={{ objectPosition: nextRef.objectPosition ?? 'center' }}
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0E0C0C] via-[#0E0C0C]/70 to-transparent" />
+
+              <div className="relative z-10 flex items-center justify-end">
+                <span className="font-montserrat text-[9px] tracking-[0.25em] text-[#C19A55] uppercase font-medium">
                   PRÓXIMA
                 </span>
               </div>
 
-              {/* Large Bronze Watermark Number */}
-              <div className="my-auto text-center">
-                <span className="font-cormorant text-7xl lg:text-8xl text-[#9B7138]/40 font-normal leading-none">
+              {/* Number watermark */}
+              <div className="relative z-10 my-auto text-center">
+                <span className="font-cormorant text-6xl lg:text-7xl text-[#C19A55]/30 font-normal leading-none">
                   {nextRef.number}
                 </span>
               </div>
 
-              <div>
-                <span className="font-montserrat text-[8.5px] tracking-[0.2em] text-[#6D625B] uppercase block">
+              <div className="relative z-10 text-right">
+                <span className="font-montserrat text-[9px] tracking-[0.2em] text-[#F2EADF]/70 uppercase block font-medium">
                   {nextRef.name}
                 </span>
               </div>
@@ -371,30 +393,34 @@ export const Inspiration: React.FC = () => {
             className="relative w-full py-2 flex items-center overflow-hidden"
           >
             {/* Active Card Mobile */}
-            <div className="relative w-[82%] xs:w-[85%] h-[420px] border border-[#C19A55] bg-[#14100F] shadow-xl p-6 flex flex-col justify-between shrink-0">
-              <div className="absolute inset-0 w-full h-full pointer-events-none bg-gradient-to-b from-[#181311] via-[#100C0B] to-[#0A0808]" />
-              <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#9B7138]/15 to-transparent pointer-events-none" />
+            <div className="relative w-[85%] h-[440px] border border-[#C19A55] bg-[#14100F] shadow-xl p-6 flex flex-col justify-between shrink-0 overflow-hidden">
+              {/* Persona Image Background Mobile */}
+              {currentRef.image && (
+                <img
+                  src={currentRef.image}
+                  alt={currentRef.alt}
+                  className="absolute inset-0 w-full h-full object-cover filter contrast-[1.08] brightness-[0.75]"
+                  style={{ objectPosition: currentRef.objectPosition ?? 'center' }}
+                />
+              )}
+
+              {/* Gradient overlays for Mobile */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0E0C0C] via-[#0E0C0C]/60 to-transparent h-[70%] top-auto pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0E0C0C]/80 via-transparent to-transparent h-[30%] pointer-events-none" />
 
               {/* Tag */}
               <div className="relative z-10">
-                <span className="font-montserrat text-[10px] tracking-[0.28em] text-[#C19A55] uppercase font-medium">
+                <span className="font-montserrat text-[10px] tracking-[0.28em] text-[#C19A55] uppercase font-medium bg-[#0E0C0C]/60 px-2 py-0.5 border border-[#C19A55]/30">
                   REFERÊNCIA {currentRef.number}
                 </span>
               </div>
 
-              {/* Big Number */}
-              <div className="relative z-10 my-auto flex items-center justify-center">
-                <span className="font-cormorant text-[90px] text-[#9B7138] font-normal leading-none drop-shadow-md">
-                  {currentRef.number}
-                </span>
-              </div>
-
-              {/* Bottom Caption */}
-              <div className="relative z-10 pt-3 border-t border-[#C19A55]/30">
-                <h4 className="font-montserrat text-[11px] tracking-[0.22em] text-[#F2EADF] uppercase font-medium">
+              {/* Bottom Caption Mobile */}
+              <div className="relative z-10 pt-3 border-t border-[#C19A55]/40 bg-[#0E0C0C]/50 -mx-6 -mb-6 p-5 backdrop-blur-xs">
+                <h4 className="font-cormorant text-2xl text-[#F2EADF] uppercase font-normal tracking-wide leading-tight">
                   {currentRef.name}
                 </h4>
-                <span className="font-montserrat text-[8.5px] tracking-[0.18em] text-[#6D625B] uppercase block mt-1">
+                <span className="font-montserrat text-[9px] tracking-[0.2em] text-[#C19A55] uppercase block mt-1 font-medium">
                   {currentRef.category}
                 </span>
               </div>
@@ -403,9 +429,18 @@ export const Inspiration: React.FC = () => {
             {/* Next Card Peak (Mobile Right) */}
             <div
               onClick={goToNext}
-              className="w-[18%] xs:w-[15%] h-[360px] border-l border-t border-b border-[#C19A55]/20 bg-[#14100F]/60 ml-3 shrink-0 p-3 opacity-35 flex flex-col justify-center items-center"
+              className="w-[15%] h-[380px] border-l border-t border-b border-[#C19A55]/20 bg-[#14100F] ml-3 shrink-0 p-2 opacity-35 flex flex-col justify-center items-center relative overflow-hidden cursor-pointer"
             >
-              <span className="font-cormorant text-3xl text-[#9B7138]/50">
+              {nextRef.image && (
+                <img
+                  src={nextRef.image}
+                  alt={nextRef.alt}
+                  className="absolute inset-0 w-full h-full object-cover filter grayscale brightness-40"
+                  style={{ objectPosition: nextRef.objectPosition ?? 'center' }}
+                />
+              )}
+              <div className="absolute inset-0 bg-[#0E0C0C]/70" />
+              <span className="relative z-10 font-cormorant text-2xl text-[#C19A55]">
                 {nextRef.number}
               </span>
             </div>

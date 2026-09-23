@@ -38,20 +38,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenQuiz }) => 
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/jeneferviana/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-[#211D1C] border border-[#6D625B]/40 flex items-center justify-center text-[#C19A55] hover:bg-[#C19A55] hover:text-[#0E0C0C] transition-colors glow-champagne"
-                aria-label="Instagram Jenefer Viana"
+                aria-label="Instagram Jenefer Viana (@jeneferviana)"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5531973277217"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-[#211D1C] border border-[#6D625B]/40 flex items-center justify-center text-[#C19A55] hover:bg-[#C19A55] hover:text-[#0E0C0C] transition-colors glow-champagne"
-                aria-label="WhatsApp Recepção"
+                aria-label="WhatsApp Recepção (31) 97327-7217"
               >
                 <Phone className="w-4 h-4" />
               </a>
@@ -77,7 +77,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking, onOpenQuiz }) => 
                 <a href="#ecossistema" className="hover:text-[#C19A55] transition-colors">Ecossistema</a>
               </li>
               <li>
-                <a href="#inspiracao" className="hover:text-[#C19A55] transition-colors">Inspiração</a>
+                <a href="#inspiracoes" className="hover:text-[#C19A55] transition-colors">Inspirações</a>
+              </li>
+              <li>
+                <a href="#midia" className="hover:text-[#C19A55] transition-colors">Evidência</a>
               </li>
               <li>
                 <a href="#contato" className="hover:text-[#C19A55] transition-colors">Contato</a>

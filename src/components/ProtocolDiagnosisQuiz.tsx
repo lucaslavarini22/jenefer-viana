@@ -60,7 +60,7 @@ export const ProtocolDiagnosisQuiz: React.FC<ProtocolDiagnosisQuizProps> = ({
     const text = encodeURIComponent(
       `Olá, Jenefer Viana Studio! Fiz o diagnóstico corporal online no site e meu protocolo recomendado foi o *${recommended.name}*. Gostaria de agendar minha avaliação VIP!`
     );
-    window.open(`https://wa.me/5511999999999?text=${text}`, '_blank');
+    window.open(`https://wa.me/5531973277217?text=${text}`, '_blank');
   };
 
   return (
