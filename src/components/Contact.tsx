@@ -467,7 +467,7 @@ export const Contact: React.FC = () => {
                 LOCALIZAÇÃO
               </span>
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Rua+Wilson+Tavares+Ribeiro+1099+Teixeira+Dias+Belo+Horizonte+MG"
+                href="https://www.google.com/maps/search/?api=1&query=Rua+Wilson+Tavares+Ribeiro%2C+1099%2C+Sala+05%2C+Teixeira+Dias%2C+Belo+Horizonte%2C+MG"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-montserrat text-[10px] font-light text-[#F2EADF]/80 mt-1 hover:text-[#C19A55] transition-colors"
@@ -480,37 +480,39 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* ========================================================= */}
-        {/* LOCATION LINK CARD */}
+        {/* LOCATION LINK CARD (CLICKABLE) */}
         {/* ========================================================= */}
         <div className="w-full mt-10 mb-4">
-          <div className="bg-[#151211] border border-[#C19A55]/30 rounded-xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex items-start sm:items-center gap-3.5">
-              <div className="w-10 h-10 rounded-full bg-[#C19A55]/10 border border-[#C19A55]/40 flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
-                <MapPin className="w-5 h-5 text-[#C19A55]" />
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Rua+Wilson+Tavares+Ribeiro%2C+1099%2C+Sala+05%2C+Teixeira+Dias%2C+Belo+Horizonte%2C+MG"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block bg-[#151211] hover:bg-[#1A1615] border border-[#C19A55]/30 hover:border-[#C19A55]/60 rounded-xl p-5 sm:p-6 transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_40px_rgba(193,154,85,0.15)]"
+          >
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="flex items-start sm:items-center gap-3.5">
+                <div className="w-11 h-11 rounded-full bg-[#C19A55]/10 border border-[#C19A55]/40 flex items-center justify-center shrink-0 mt-0.5 sm:mt-0 group-hover:scale-105 transition-transform">
+                  <MapPin className="w-5 h-5 text-[#C19A55]" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-montserrat text-[10px] tracking-[0.25em] text-[#C19A55] uppercase font-medium">
+                    ENDEREÇO DO STUDIO • ATENDIMENTO PRIVATIVO
+                  </span>
+                  <span className="font-cormorant text-xl sm:text-2xl text-[#F2EADF] group-hover:text-[#C19A55] transition-colors font-normal leading-tight mt-0.5">
+                    Rua Wilson Tavares Ribeiro, 1099 — Sala 05
+                  </span>
+                  <span className="font-montserrat text-xs text-[#F2EADF]/70 font-light">
+                    Teixeira Dias, Belo Horizonte — MG
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <span className="font-montserrat text-[10px] tracking-[0.25em] text-[#C19A55] uppercase font-medium">
-                  ENDEREÇO DO STUDIO • ATENDIMENTO PRIVATIVO
-                </span>
-                <span className="font-cormorant text-xl sm:text-2xl text-[#F2EADF] font-normal leading-tight mt-0.5">
-                  Rua Wilson Tavares Ribeiro, 1099 — Sala 05
-                </span>
-                <span className="font-montserrat text-xs text-[#F2EADF]/70 font-light">
-                  Teixeira Dias, Belo Horizonte — MG
-                </span>
+
+              <div className="inline-flex items-center justify-center gap-2.5 h-12 px-6 bg-[#C19A55] group-hover:bg-[#D4AD68] text-[#0E0C0C] font-montserrat text-xs font-semibold tracking-[0.18em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(193,154,85,0.25)] group-hover:shadow-[0_6px_25px_rgba(193,154,85,0.4)] shrink-0 self-start md:self-auto">
+                <span>VER NO GOOGLE MAPS</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </div>
-
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Rua+Wilson+Tavares+Ribeiro%2C+1099%2C+Sala+05%2C+Teixeira+Dias%2C+Belo+Horizonte%2C+MG"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 h-12 px-6 bg-[#C19A55] hover:bg-[#D4AD68] text-[#0E0C0C] font-montserrat text-xs font-semibold tracking-[0.18em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(193,154,85,0.25)] hover:shadow-[0_6px_25px_rgba(193,154,85,0.4)] hover:scale-[1.02] active:scale-[0.98] shrink-0"
-            >
-              <span>VER NO GOOGLE MAPS</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-          </div>
+          </a>
         </div>
 
         {/* ========================================================= */}
