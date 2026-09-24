@@ -105,15 +105,15 @@ export const About: React.FC = () => {
 
           </div>
 
-          {/* Right Column: Luminous Golden Circular Neon Ring with Official Brand Symbol (42% width -> 5 cols) */}
+          {/* Right Column: Luminous Golden Circular Neon Ring with Official Brand Symbol */}
           <div className="md:col-span-5 lg:col-span-5 relative flex items-center justify-center h-full min-h-[520px]">
             
             {/* Luminous Golden Ring Structure */}
-            <div className="relative w-[340px] h-[340px] sm:w-[400px] sm:h-[400px] lg:w-[460px] lg:h-[460px] flex items-center justify-center">
+            <div className="relative w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] lg:w-[480px] lg:h-[480px] flex items-center justify-center">
               
               {/* Outer Golden Neon Ring */}
               <div
-                className="absolute inset-0 rounded-full border-[1.5px] border-[#C19A55] shadow-[0_0_35px_rgba(193,154,85,0.45),0_0_70px_rgba(193,154,85,0.25),inset_0_0_35px_rgba(193,154,85,0.15)] animate-pulse"
+                className="absolute inset-0 rounded-full border-[1.5px] border-[#C19A55] shadow-[0_0_40px_rgba(193,154,85,0.5),0_0_80px_rgba(193,154,85,0.25),inset_0_0_40px_rgba(193,154,85,0.18)] animate-pulse"
                 style={{ animationDuration: '7s' }}
               />
 
@@ -123,12 +123,12 @@ export const About: React.FC = () => {
               {/* Official Brand Symbol Centered inside the Ring */}
               <div className="relative z-10 flex flex-col items-center justify-center p-6 transition-transform duration-700 hover:scale-105">
                 <BrandSymbol
-                  className="w-44 h-44 sm:w-52 sm:h-52 lg:w-60 lg:h-60 filter drop-shadow-[0_0_25px_rgba(193,154,85,0.4)]"
+                  className="w-52 h-52 sm:w-60 sm:h-60 lg:w-[260px] lg:h-[260px] filter drop-shadow-[0_0_25px_rgba(193,154,85,0.4)]"
                 />
               </div>
 
               {/* Discrete Tag: ESTRUTURA • EXPERIÊNCIA */}
-              <div className="absolute bottom-8 right-2 lg:right-4 z-20">
+              <div className="absolute bottom-5 right-8 lg:right-12 z-20">
                 <span className="font-montserrat text-[9px] sm:text-[10px] tracking-[0.32em] text-[#C19A55]/85 uppercase font-light">
                   ESTRUTURA • EXPERIÊNCIA
                 </span>
