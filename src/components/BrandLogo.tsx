@@ -26,7 +26,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     return (
       <div className={`flex flex-col ${align === 'center' ? 'items-center text-center' : 'items-start'} ${className}`}>
         <img
-          src="/assets/logo-official-transparent.png"
+          src="/assets/logo-official-transparent.png?v=2"
           alt="Jenefer Viana Studio Logo Oficial"
           className="h-auto object-contain max-w-[180px]"
           style={{ width: symbolSize ? symbolSize * 3 : 140 }}
