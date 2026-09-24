@@ -25,20 +25,12 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   if (variant === 'stacked') {
     return (
       <div className={`flex flex-col ${align === 'center' ? 'items-center text-center' : 'items-start'} ${className}`}>
-        <BrandSymbol size={symbolSize} color={symbolColor} className="mb-2.5" />
-        <div className="flex flex-col">
-          <span
-            className="font-playfair text-base sm:text-lg tracking-[0.24em] uppercase font-semibold leading-tight"
-            style={{ color: textColor }}
-          >
-            JENEFER VIANA
-          </span>
-          <span
-            className="text-[9px] sm:text-[10px] tracking-[0.45em] uppercase font-light mt-1 text-[#C19A55]"
-          >
-            STUDIO
-          </span>
-        </div>
+        <img
+          src="/assets/logo-official-transparent.png"
+          alt="Jenefer Viana Studio Logo Oficial"
+          className="h-auto object-contain max-w-[180px]"
+          style={{ width: symbolSize ? symbolSize * 3 : 140 }}
+        />
       </div>
     );
   }
@@ -51,7 +43,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       </div>
       <div className="flex flex-col justify-center">
         <span
-          className="font-playfair text-sm sm:text-base md:text-lg tracking-[0.22em] uppercase font-medium leading-none"
+          className="font-cormorant text-sm sm:text-base md:text-lg tracking-[0.22em] uppercase font-medium leading-none"
           style={{ color: textColor }}
         >
           JENEFER VIANA
