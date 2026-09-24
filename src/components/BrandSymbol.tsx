@@ -1,4 +1,5 @@
 import React from 'react';
+import symbolImg from '../assets/logo-symbol-transparent.png';
 
 interface BrandSymbolProps {
   className?: string;
@@ -12,7 +13,7 @@ export const BrandSymbol: React.FC<BrandSymbolProps> = ({
 }) => {
   return (
     <img
-      src="/assets/logo-symbol-transparent.png?v=2"
+      src={symbolImg}
       alt="Jenefer Viana Studio Símbolo Oficial Libélula J+V"
       className={`object-contain inline-block select-none ${className}`}
       style={size ? { width: size, height: size } : undefined}

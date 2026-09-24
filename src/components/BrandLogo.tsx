@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrandSymbol } from './BrandSymbol';
+import logoOfficialImg from '../assets/logo-official-transparent.png';
 
 interface BrandLogoProps {
   className?: string;
@@ -26,7 +27,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     return (
       <div className={`flex flex-col ${align === 'center' ? 'items-center text-center' : 'items-start'} ${className}`}>
         <img
-          src="/assets/logo-official-transparent.png?v=2"
+          src={logoOfficialImg}
           alt="Jenefer Viana Studio Logo Oficial"
           className="h-auto object-contain max-w-[180px]"
           style={{ width: symbolSize ? symbolSize * 3 : 140 }}
