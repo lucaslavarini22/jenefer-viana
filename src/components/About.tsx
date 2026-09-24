@@ -121,10 +121,9 @@ export const About: React.FC = () => {
               <div className="absolute inset-6 rounded-full bg-radial from-[#C19A55]/14 via-[#9B7138]/6 to-transparent blur-md pointer-events-none" />
 
               {/* Official Brand Symbol Centered inside the Ring */}
-              <div className="relative z-10 flex flex-col items-center justify-center p-8 transition-transform duration-700 hover:scale-105">
+              <div className="relative z-10 flex flex-col items-center justify-center p-6 transition-transform duration-700 hover:scale-105">
                 <BrandSymbol
-                  className="w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 filter drop-shadow-[0_0_20px_rgba(193,154,85,0.35)]"
-                  color="#C19A55"
+                  className="w-44 h-44 sm:w-52 sm:h-52 lg:w-60 lg:h-60 filter drop-shadow-[0_0_25px_rgba(193,154,85,0.4)]"
                 />
               </div>
 
@@ -166,8 +165,7 @@ export const About: React.FC = () => {
               
               {/* Official Symbol */}
               <BrandSymbol
-                className="w-24 h-24 xs:w-28 xs:h-28 relative z-10 drop-shadow-[0_0_16px_rgba(193,154,85,0.35)]"
-                color="#C19A55"
+                className="w-36 h-36 xs:w-44 xs:h-44 relative z-10 drop-shadow-[0_0_20px_rgba(193,154,85,0.4)]"
               />
 
               {/* Discrete Tag */}
