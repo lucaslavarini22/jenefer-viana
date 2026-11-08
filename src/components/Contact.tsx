@@ -496,7 +496,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-montserrat text-[10px] tracking-[0.25em] text-[#C19A55] uppercase font-medium">
-                    ENDEREÇO DO STUDIO • ATENDIMENTO PRIVATIVO
+                    ENDEREÇO DO STUDIO
                   </span>
                   <span className="font-cormorant text-xl sm:text-2xl text-[#F2EADF] group-hover:text-[#C19A55] transition-colors font-normal leading-tight mt-0.5">
                     Rua Wilson Tavares Ribeiro, 1099 — Sala 05
@@ -508,7 +508,7 @@ export const Contact: React.FC = () => {
               </div>
 
               <div className="inline-flex items-center justify-center gap-2.5 h-12 px-6 bg-[#C19A55] group-hover:bg-[#D4AD68] text-[#0E0C0C] font-montserrat text-xs font-semibold tracking-[0.18em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(193,154,85,0.25)] group-hover:shadow-[0_6px_25px_rgba(193,154,85,0.4)] shrink-0 self-start md:self-auto">
-                <span>VER NO GOOGLE MAPS</span>
+                <span>ABRIR NO GOOGLE MAPS</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </div>
