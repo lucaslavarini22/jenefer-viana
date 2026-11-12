@@ -18,6 +18,8 @@
     background-color: #0E0C0C;
     color: #F2EADF;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   h1, h2, h3, h4, .font-serif-luxury {
